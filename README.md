@@ -47,7 +47,7 @@ After that you can test you function locally within the Test menu inside Lambda.
     {
       "eventVersion": "2.0",
       "eventSource": "aws:s3",
-      "awsRegion": "<YOUR REGION>", # YOUR AWS REGION OF THE BUCKET
+      "awsRegion": "<YOUR REGION>", -->YOUR-AWS-REGION-OF-THE-BUCKET
       "eventTime": "1970-01-01T00:00:00.000Z",
       "eventName": "ObjectCreated:Put",
       "userIdentity": {
@@ -64,14 +64,14 @@ After that you can test you function locally within the Test menu inside Lambda.
         "s3SchemaVersion": "1.0",
         "configurationId": "testConfigRule",
         "bucket": {
-          "name": "<YOUR BUCKET NAME>", # your bucket name where you upload the PDFs to.
+          "name": "<YOUR BUCKET NAME>", -> your-bucket-name-where-you-upload-the-PDFs-to.
           "ownerIdentity": {
             "principalId": "EXAMPLE"
           },
           "arn": "arn:aws:s3:::<BUCKET-NAME>"
         },
         "object": {
-          "key": "PDF_TO_JPG/Train_PDFs/file.pdf", # the file location of the pdf filw with its name
+          "key": "PDF_TO_JPG/Train_PDFs/file.pdf", -> the-file-location-of-the-pdf-file-with-its-name
           "size": 1024,
           "eTag": "0123456789abcdef0123456789abcdef",
           "sequencer": "0A1B2C3D4E5F678901"
@@ -90,6 +90,6 @@ CONGRATULATIONS that was it. So whenever you upload a PDF file to your bucket th
 
 In order to make the most of your function, it might be useful to use the [Lambda-Power-Tuner](https://github.com/alexcasalboni/aws-lambda-power-tuning) to optimize for performance or cost. This tool runs your lambda function with different settings of RAM (within Lambda CPU is proportionally allocated to RAM) and outputs the performance and costs, respectively. My results of the Lambda Power Tuner with the RAM setting of ```[512, 1024, 2048, 3008, 5120, 7220]``` look as follows: 
 
-[!image](tuning-results.PNG)
+[!image2](tuning-results.PNG)
 
 Might be also worth a look for you in order to make the most out of your lambda function.
