@@ -33,9 +33,11 @@ After this step is done we are ready to push this container to the Elastic Conta
 
 ```
 aws ecr get-login-password --region <YOUR-REGION> | docker login --username AWS --password-stdin <ACCOUNT-ID>.dkr.ecr.eu-central-1.amazonaws.com
-
+```
+```
 docker tag invoicedigitizer:latest <ACCOUNT-ID>.dkr.ecr.<REGION>.amazonaws.com/invoicedigitizer:latest
-
+```
+```
 docker push <ACCOUNT-ID>.dkr.ecr.<REGION>.amazonaws.com/invoicedigitizer:latest
 ```
 Now the heavy lifting is done and you can upload the container to lambda. **Create a new lambda function --> Container image --> Give a proper name & select the perviously uploaded container.**
@@ -90,6 +92,6 @@ CONGRATULATIONS that was it. So whenever you upload a PDF file to your bucket th
 
 In order to make the most of your function, it might be useful to use the [Lambda-Power-Tuner](https://github.com/alexcasalboni/aws-lambda-power-tuning) to optimize for performance or cost. This tool runs your lambda function with different settings of RAM (within Lambda CPU is proportionally allocated to RAM) and outputs the performance and costs, respectively. My results of the Lambda Power Tuner with the RAM setting of ```[512, 1024, 2048, 3008, 5120, 7220]``` look as follows: 
 
-[!image2](tuning-results.PNG)
+[!image2](tuning-results.PNG){width=50%}{height=50%}
 
 Might be also worth a look for you in order to make the most out of your lambda function.
