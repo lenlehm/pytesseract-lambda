@@ -92,6 +92,6 @@ CONGRATULATIONS that was it. So whenever you upload a PDF file to your bucket th
 
 In order to make the most of your function, it might be useful to use the [Lambda-Power-Tuner](https://github.com/alexcasalboni/aws-lambda-power-tuning) to optimize for performance or cost. This tool runs your lambda function with different settings of RAM (within Lambda CPU is proportionally allocated to RAM) and outputs the performance and costs, respectively. My results of the Lambda Power Tuner with the RAM setting of ```[512, 1024, 2048, 3008, 5120, 7220]``` look as follows: 
 
-[!image2](tuning-results.PNG){width=50%}{height=50%}
+![Tuning-results](tuning-results.PNG){:height="50%" width="50%"}
 
 Might be also worth a look for you in order to make the most out of your lambda function.
